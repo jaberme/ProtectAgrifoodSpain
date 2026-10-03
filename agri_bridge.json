@@ -1,0 +1,95 @@
+{
+  "anchors": {
+    "crop_share_2024": 0.5674557942422914,
+    "irrigated_share_of_crop_value": 0.65,
+    "pig_share_of_PFA_2024": 0.163,
+    "poultry_meat_share_of_PFA_2024": 0.06,
+    "pi_irr": 0.36884626625748945,
+    "pi_intensive": 0.223
+  },
+  "cases": {
+    "S3/S4": {
+      "mechanism": "irrigation SCADA/IoT compromise; pumping and water allocation halted",
+      "exposed": "irrigated crop production",
+      "pi": 0.36884626625748945,
+      "q": 0.15,
+      "q_range": [
+        0.1,
+        0.2
+      ],
+      "phi_times_h": 0.4066734944126718,
+      "phi_times_h_range": [
+        0.27111566294178124,
+        0.5422313258835625
+      ],
+      "examples": [
+        {
+          "phi": 0.5,
+          "h": 0.8133469888253436
+        },
+        {
+          "phi": 0.75,
+          "h": 0.5422313258835624
+        },
+        {
+          "phi": 1.0,
+          "h": 0.4066734944126718
+        }
+      ]
+    },
+    "A1": {
+      "mechanism": "silent fertigation integrity drift (dosing setpoints)",
+      "exposed": "irrigated crop production (fertigated subset not separately measured)",
+      "pi": 0.36884626625748945,
+      "q": 0.1,
+      "q_range": [
+        0.05,
+        0.15
+      ],
+      "phi_times_h": 0.27111566294178124,
+      "phi_times_h_range": [
+        0.13555783147089062,
+        0.4066734944126718
+      ],
+      "examples": [
+        {
+          "phi": 0.5,
+          "h": 0.5422313258835625
+        },
+        {
+          "phi": 0.75,
+          "h": 0.36148755058904164
+        },
+        {
+          "phi": 1.0,
+          "h": 0.27111566294178124
+        }
+      ]
+    },
+    "G1": {
+      "mechanism": "livestock climate/ventilation control compromise in intensive farms",
+      "exposed": "intensive pig and poultry-meat production",
+      "pi": 0.223,
+      "q": 0.12,
+      "q_range": [
+        0.08,
+        0.15
+      ],
+      "phi_times_h": 0.5381165919282511,
+      "phi_times_h_range": [
+        0.35874439461883406,
+        0.6726457399103138
+      ],
+      "examples": [
+        {
+          "phi": 0.75,
+          "h": 0.7174887892376681
+        },
+        {
+          "phi": 1.0,
+          "h": 0.5381165919282511
+        }
+      ]
+    }
+  }
+}

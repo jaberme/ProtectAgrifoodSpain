@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Local outputs and credentials; these are not part of the reproduction set.
+run_scenarios.log
+APIs.txt
+censys_results.json
+

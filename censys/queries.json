@@ -1,0 +1,364 @@
+{
+  "schema_version": 1,
+  "endpoint": "https://api.platform.censys.io/v3/global/search/aggregate",
+  "unit": "root host documents per bucket; not physical devices",
+  "ics_protocols": [
+    "MODBUS",
+    "S7",
+    "EIP",
+    "CODESYS",
+    "FINS",
+    "MELSEC",
+    "DNP3",
+    "IEC60870_5_104",
+    "OPC_UA",
+    "BACNET",
+    "FOX",
+    "GE_SRTP",
+    "PCWORX",
+    "PRO_CON_OS",
+    "PROFINET",
+    "CMORE",
+    "CMORE_HMI",
+    "SCADA_VIEW",
+    "REDLION_CRIMSON",
+    "REDLION_WEB"
+  ],
+  "remote_protocols": [
+    "SSH",
+    "TELNET",
+    "RDP",
+    "VNC",
+    "WINRM",
+    "OPENVPN",
+    "IKE",
+    "PPTP"
+  ],
+  "iot_protocols": [
+    "MQTT",
+    "COAP"
+  ],
+  "lexical_terms": {
+    "AGR": [
+      "fertirrigación",
+      "fertirrigacion",
+      "fertigation",
+      "comunidad de regantes",
+      "comunidades de regantes",
+      "riego agrícola",
+      "riego agricola",
+      "agricultural irrigation",
+      "control de invernaderos",
+      "greenhouse control",
+      "explotación ganadera",
+      "explotacion ganadera",
+      "livestock farm"
+    ],
+    "IAB": [
+      "industria alimentaria",
+      "industria agroalimentaria",
+      "procesado de alimentos",
+      "food processing",
+      "food production",
+      "matadero",
+      "slaughterhouse",
+      "industria láctea",
+      "industria lactea"
+    ],
+    "RET": [
+      "distribución alimentaria",
+      "distribucion alimentaria",
+      "distribución de alimentos",
+      "distribucion de alimentos",
+      "food distribution",
+      "almacén frigorífico",
+      "almacen frigorifico",
+      "cadena de frío alimentaria",
+      "food cold chain"
+    ]
+  },
+  "expanded_terms": [
+    "regantes",
+    "fertiriego",
+    "irrigation",
+    "invernadero",
+    "greenhouse",
+    "ganadería",
+    "ganaderia",
+    "agroalimentario",
+    "agroalimentaria",
+    "alimentación",
+    "alimentacion",
+    "agricultura",
+    "agriculture",
+    "horticulture",
+    "horticultura",
+    "avicultura",
+    "poultry",
+    "porcino",
+    "lácteos",
+    "lacteos",
+    "cold storage",
+    "cadena de frío",
+    "cadena de frio"
+  ],
+  "text_fields": [
+    "host.services.banner",
+    "host.services.endpoints.http.body"
+  ],
+  "device_terms": {
+    "plc": [
+      "PLC",
+      "programmable logic controller"
+    ],
+    "rtu": [
+      "RTU",
+      "remote terminal unit"
+    ],
+    "hmi_scada": [
+      "HMI",
+      "SCADA"
+    ],
+    "gateway": [
+      "gateway",
+      "industrial gateway"
+    ]
+  },
+  "device_product_fields": [
+    "host.hardware.product",
+    "host.services.hardware.product",
+    "host.services.software.product"
+  ],
+  "jobs": [
+    {
+      "id": "es_ics_total",
+      "request": {
+        "query": "(host.location.country_code=\"ES\") AND ((host.services.protocol=\"MODBUS\" OR host.services.protocol=\"S7\" OR host.services.protocol=\"EIP\" OR host.services.protocol=\"CODESYS\" OR host.services.protocol=\"FINS\" OR host.services.protocol=\"MELSEC\" OR host.services.protocol=\"DNP3\" OR host.services.protocol=\"IEC60870_5_104\" OR host.services.protocol=\"OPC_UA\" OR host.services.protocol=\"BACNET\" OR host.services.protocol=\"FOX\" OR host.services.protocol=\"GE_SRTP\" OR host.services.protocol=\"PCWORX\" OR host.services.protocol=\"PRO_CON_OS\" OR host.services.protocol=\"PROFINET\" OR host.services.protocol=\"CMORE\" OR host.services.protocol=\"CMORE_HMI\" OR host.services.protocol=\"SCADA_VIEW\" OR host.services.protocol=\"REDLION_CRIMSON\" OR host.services.protocol=\"REDLION_WEB\"))",
+        "field": "host.location.country_code",
+        "number_of_buckets": 2000,
+        "count_by_level": ".",
+        "filter_by_query": false
+      }
+    },
+    {
+      "id": "es_ics_protocols",
+      "request": {
+        "query": "(host.location.country_code=\"ES\") AND ((host.services.protocol=\"MODBUS\" OR host.services.protocol=\"S7\" OR host.services.protocol=\"EIP\" OR host.services.protocol=\"CODESYS\" OR host.services.protocol=\"FINS\" OR host.services.protocol=\"MELSEC\" OR host.services.protocol=\"DNP3\" OR host.services.protocol=\"IEC60870_5_104\" OR host.services.protocol=\"OPC_UA\" OR host.services.protocol=\"BACNET\" OR host.services.protocol=\"FOX\" OR host.services.protocol=\"GE_SRTP\" OR host.services.protocol=\"PCWORX\" OR host.services.protocol=\"PRO_CON_OS\" OR host.services.protocol=\"PROFINET\" OR host.services.protocol=\"CMORE\" OR host.services.protocol=\"CMORE_HMI\" OR host.services.protocol=\"SCADA_VIEW\" OR host.services.protocol=\"REDLION_CRIMSON\" OR host.services.protocol=\"REDLION_WEB\"))",
+        "field": "host.services.protocol",
+        "number_of_buckets": 2000,
+        "count_by_level": ".",
+        "filter_by_query": true
+      }
+    },
+    {
+      "id": "lexical_total",
+      "request": {
+        "query": "(host.location.country_code=\"ES\") AND ((host.services.banner: {\"fertirrigación\", \"fertirrigacion\", \"fertigation\", \"comunidad de regantes\", \"comunidades de regantes\", \"riego agrícola\", \"riego agricola\", \"agricultural irrigation\", \"control de invernaderos\", \"greenhouse control\", \"explotación ganadera\", \"explotacion ganadera\", \"livestock farm\", \"industria alimentaria\", \"industria agroalimentaria\", \"procesado de alimentos\", \"food processing\", \"food production\", \"matadero\", \"slaughterhouse\", \"industria láctea\", \"industria lactea\", \"distribución alimentaria\", \"distribucion alimentaria\", \"distribución de alimentos\", \"distribucion de alimentos\", \"food distribution\", \"almacén frigorífico\", \"almacen frigorifico\", \"cadena de frío alimentaria\", \"food cold chain\"} OR host.services.endpoints.http.body: {\"fertirrigación\", \"fertirrigacion\", \"fertigation\", \"comunidad de regantes\", \"comunidades de regantes\", \"riego agrícola\", \"riego agricola\", \"agricultural irrigation\", \"control de invernaderos\", \"greenhouse control\", \"explotación ganadera\", \"explotacion ganadera\", \"livestock farm\", \"industria alimentaria\", \"industria agroalimentaria\", \"procesado de alimentos\", \"food processing\", \"food production\", \"matadero\", \"slaughterhouse\", \"industria láctea\", \"industria lactea\", \"distribución alimentaria\", \"distribucion alimentaria\", \"distribución de alimentos\", \"distribucion de alimentos\", \"food distribution\", \"almacén frigorífico\", \"almacen frigorifico\", \"cadena de frío alimentaria\", \"food cold chain\"}))",
+        "field": "host.location.country_code",
+        "number_of_buckets": 2000,
+        "count_by_level": ".",
+        "filter_by_query": false
+      }
+    },
+    {
+      "id": "lexical_protocols",
+      "request": {
+        "query": "(host.location.country_code=\"ES\") AND ((host.services.banner: {\"fertirrigación\", \"fertirrigacion\", \"fertigation\", \"comunidad de regantes\", \"comunidades de regantes\", \"riego agrícola\", \"riego agricola\", \"agricultural irrigation\", \"control de invernaderos\", \"greenhouse control\", \"explotación ganadera\", \"explotacion ganadera\", \"livestock farm\", \"industria alimentaria\", \"industria agroalimentaria\", \"procesado de alimentos\", \"food processing\", \"food production\", \"matadero\", \"slaughterhouse\", \"industria láctea\", \"industria lactea\", \"distribución alimentaria\", \"distribucion alimentaria\", \"distribución de alimentos\", \"distribucion de alimentos\", \"food distribution\", \"almacén frigorífico\", \"almacen frigorifico\", \"cadena de frío alimentaria\", \"food cold chain\"} OR host.services.endpoints.http.body: {\"fertirrigación\", \"fertirrigacion\", \"fertigation\", \"comunidad de regantes\", \"comunidades de regantes\", \"riego agrícola\", \"riego agricola\", \"agricultural irrigation\", \"control de invernaderos\", \"greenhouse control\", \"explotación ganadera\", \"explotacion ganadera\", \"livestock farm\", \"industria alimentaria\", \"industria agroalimentaria\", \"procesado de alimentos\", \"food processing\", \"food production\", \"matadero\", \"slaughterhouse\", \"industria láctea\", \"industria lactea\", \"distribución alimentaria\", \"distribucion alimentaria\", \"distribución de alimentos\", \"distribucion de alimentos\", \"food distribution\", \"almacén frigorífico\", \"almacen frigorifico\", \"cadena de frío alimentaria\", \"food cold chain\"}))",
+        "field": "host.services.protocol",
+        "number_of_buckets": 2000,
+        "count_by_level": ".",
+        "filter_by_query": false
+      }
+    },
+    {
+      "id": "primary_total",
+      "request": {
+        "query": "((host.location.country_code=\"ES\") AND ((host.services.banner: {\"fertirrigación\", \"fertirrigacion\", \"fertigation\", \"comunidad de regantes\", \"comunidades de regantes\", \"riego agrícola\", \"riego agricola\", \"agricultural irrigation\", \"control de invernaderos\", \"greenhouse control\", \"explotación ganadera\", \"explotacion ganadera\", \"livestock farm\", \"industria alimentaria\", \"industria agroalimentaria\", \"procesado de alimentos\", \"food processing\", \"food production\", \"matadero\", \"slaughterhouse\", \"industria láctea\", \"industria lactea\", \"distribución alimentaria\", \"distribucion alimentaria\", \"distribución de alimentos\", \"distribucion de alimentos\", \"food distribution\", \"almacén frigorífico\", \"almacen frigorifico\", \"cadena de frío alimentaria\", \"food cold chain\"} OR host.services.endpoints.http.body: {\"fertirrigación\", \"fertirrigacion\", \"fertigation\", \"comunidad de regantes\", \"comunidades de regantes\", \"riego agrícola\", \"riego agricola\", \"agricultural irrigation\", \"control de invernaderos\", \"greenhouse control\", \"explotación ganadera\", \"explotacion ganadera\", \"livestock farm\", \"industria alimentaria\", \"industria agroalimentaria\", \"procesado de alimentos\", \"food processing\", \"food production\", \"matadero\", \"slaughterhouse\", \"industria láctea\", \"industria lactea\", \"distribución alimentaria\", \"distribucion alimentaria\", \"distribución de alimentos\", \"distribucion de alimentos\", \"food distribution\", \"almacén frigorífico\", \"almacen frigorifico\", \"cadena de frío alimentaria\", \"food cold chain\"}))) AND ((host.services.protocol=\"MODBUS\" OR host.services.protocol=\"S7\" OR host.services.protocol=\"EIP\" OR host.services.protocol=\"CODESYS\" OR host.services.protocol=\"FINS\" OR host.services.protocol=\"MELSEC\" OR host.services.protocol=\"DNP3\" OR host.services.protocol=\"IEC60870_5_104\" OR host.services.protocol=\"OPC_UA\" OR host.services.protocol=\"BACNET\" OR host.services.protocol=\"FOX\" OR host.services.protocol=\"GE_SRTP\" OR host.services.protocol=\"PCWORX\" OR host.services.protocol=\"PRO_CON_OS\" OR host.services.protocol=\"PROFINET\" OR host.services.protocol=\"CMORE\" OR host.services.protocol=\"CMORE_HMI\" OR host.services.protocol=\"SCADA_VIEW\" OR host.services.protocol=\"REDLION_CRIMSON\" OR host.services.protocol=\"REDLION_WEB\"))",
+        "field": "host.location.country_code",
+        "number_of_buckets": 2000,
+        "count_by_level": ".",
+        "filter_by_query": false
+      }
+    },
+    {
+      "id": "primary_protocols",
+      "request": {
+        "query": "((host.location.country_code=\"ES\") AND ((host.services.banner: {\"fertirrigación\", \"fertirrigacion\", \"fertigation\", \"comunidad de regantes\", \"comunidades de regantes\", \"riego agrícola\", \"riego agricola\", \"agricultural irrigation\", \"control de invernaderos\", \"greenhouse control\", \"explotación ganadera\", \"explotacion ganadera\", \"livestock farm\", \"industria alimentaria\", \"industria agroalimentaria\", \"procesado de alimentos\", \"food processing\", \"food production\", \"matadero\", \"slaughterhouse\", \"industria láctea\", \"industria lactea\", \"distribución alimentaria\", \"distribucion alimentaria\", \"distribución de alimentos\", \"distribucion de alimentos\", \"food distribution\", \"almacén frigorífico\", \"almacen frigorifico\", \"cadena de frío alimentaria\", \"food cold chain\"} OR host.services.endpoints.http.body: {\"fertirrigación\", \"fertirrigacion\", \"fertigation\", \"comunidad de regantes\", \"comunidades de regantes\", \"riego agrícola\", \"riego agricola\", \"agricultural irrigation\", \"control de invernaderos\", \"greenhouse control\", \"explotación ganadera\", \"explotacion ganadera\", \"livestock farm\", \"industria alimentaria\", \"industria agroalimentaria\", \"procesado de alimentos\", \"food processing\", \"food production\", \"matadero\", \"slaughterhouse\", \"industria láctea\", \"industria lactea\", \"distribución alimentaria\", \"distribucion alimentaria\", \"distribución de alimentos\", \"distribucion de alimentos\", \"food distribution\", \"almacén frigorífico\", \"almacen frigorifico\", \"cadena de frío alimentaria\", \"food cold chain\"}))) AND ((host.services.protocol=\"MODBUS\" OR host.services.protocol=\"S7\" OR host.services.protocol=\"EIP\" OR host.services.protocol=\"CODESYS\" OR host.services.protocol=\"FINS\" OR host.services.protocol=\"MELSEC\" OR host.services.protocol=\"DNP3\" OR host.services.protocol=\"IEC60870_5_104\" OR host.services.protocol=\"OPC_UA\" OR host.services.protocol=\"BACNET\" OR host.services.protocol=\"FOX\" OR host.services.protocol=\"GE_SRTP\" OR host.services.protocol=\"PCWORX\" OR host.services.protocol=\"PRO_CON_OS\" OR host.services.protocol=\"PROFINET\" OR host.services.protocol=\"CMORE\" OR host.services.protocol=\"CMORE_HMI\" OR host.services.protocol=\"SCADA_VIEW\" OR host.services.protocol=\"REDLION_CRIMSON\" OR host.services.protocol=\"REDLION_WEB\"))",
+        "field": "host.services.protocol",
+        "number_of_buckets": 2000,
+        "count_by_level": ".",
+        "filter_by_query": false
+      }
+    },
+    {
+      "id": "primary_regions",
+      "request": {
+        "query": "((host.location.country_code=\"ES\") AND ((host.services.banner: {\"fertirrigación\", \"fertirrigacion\", \"fertigation\", \"comunidad de regantes\", \"comunidades de regantes\", \"riego agrícola\", \"riego agricola\", \"agricultural irrigation\", \"control de invernaderos\", \"greenhouse control\", \"explotación ganadera\", \"explotacion ganadera\", \"livestock farm\", \"industria alimentaria\", \"industria agroalimentaria\", \"procesado de alimentos\", \"food processing\", \"food production\", \"matadero\", \"slaughterhouse\", \"industria láctea\", \"industria lactea\", \"distribución alimentaria\", \"distribucion alimentaria\", \"distribución de alimentos\", \"distribucion de alimentos\", \"food distribution\", \"almacén frigorífico\", \"almacen frigorifico\", \"cadena de frío alimentaria\", \"food cold chain\"} OR host.services.endpoints.http.body: {\"fertirrigación\", \"fertirrigacion\", \"fertigation\", \"comunidad de regantes\", \"comunidades de regantes\", \"riego agrícola\", \"riego agricola\", \"agricultural irrigation\", \"control de invernaderos\", \"greenhouse control\", \"explotación ganadera\", \"explotacion ganadera\", \"livestock farm\", \"industria alimentaria\", \"industria agroalimentaria\", \"procesado de alimentos\", \"food processing\", \"food production\", \"matadero\", \"slaughterhouse\", \"industria láctea\", \"industria lactea\", \"distribución alimentaria\", \"distribucion alimentaria\", \"distribución de alimentos\", \"distribucion de alimentos\", \"food distribution\", \"almacén frigorífico\", \"almacen frigorifico\", \"cadena de frío alimentaria\", \"food cold chain\"}))) AND ((host.services.protocol=\"MODBUS\" OR host.services.protocol=\"S7\" OR host.services.protocol=\"EIP\" OR host.services.protocol=\"CODESYS\" OR host.services.protocol=\"FINS\" OR host.services.protocol=\"MELSEC\" OR host.services.protocol=\"DNP3\" OR host.services.protocol=\"IEC60870_5_104\" OR host.services.protocol=\"OPC_UA\" OR host.services.protocol=\"BACNET\" OR host.services.protocol=\"FOX\" OR host.services.protocol=\"GE_SRTP\" OR host.services.protocol=\"PCWORX\" OR host.services.protocol=\"PRO_CON_OS\" OR host.services.protocol=\"PROFINET\" OR host.services.protocol=\"CMORE\" OR host.services.protocol=\"CMORE_HMI\" OR host.services.protocol=\"SCADA_VIEW\" OR host.services.protocol=\"REDLION_CRIMSON\" OR host.services.protocol=\"REDLION_WEB\"))",
+        "field": "host.location.province",
+        "number_of_buckets": 2000,
+        "count_by_level": ".",
+        "filter_by_query": false
+      }
+    },
+    {
+      "id": "primary_region_missing",
+      "request": {
+        "query": "(((host.location.country_code=\"ES\") AND ((host.services.banner: {\"fertirrigación\", \"fertirrigacion\", \"fertigation\", \"comunidad de regantes\", \"comunidades de regantes\", \"riego agrícola\", \"riego agricola\", \"agricultural irrigation\", \"control de invernaderos\", \"greenhouse control\", \"explotación ganadera\", \"explotacion ganadera\", \"livestock farm\", \"industria alimentaria\", \"industria agroalimentaria\", \"procesado de alimentos\", \"food processing\", \"food production\", \"matadero\", \"slaughterhouse\", \"industria láctea\", \"industria lactea\", \"distribución alimentaria\", \"distribucion alimentaria\", \"distribución de alimentos\", \"distribucion de alimentos\", \"food distribution\", \"almacén frigorífico\", \"almacen frigorifico\", \"cadena de frío alimentaria\", \"food cold chain\"} OR host.services.endpoints.http.body: {\"fertirrigación\", \"fertirrigacion\", \"fertigation\", \"comunidad de regantes\", \"comunidades de regantes\", \"riego agrícola\", \"riego agricola\", \"agricultural irrigation\", \"control de invernaderos\", \"greenhouse control\", \"explotación ganadera\", \"explotacion ganadera\", \"livestock farm\", \"industria alimentaria\", \"industria agroalimentaria\", \"procesado de alimentos\", \"food processing\", \"food production\", \"matadero\", \"slaughterhouse\", \"industria láctea\", \"industria lactea\", \"distribución alimentaria\", \"distribucion alimentaria\", \"distribución de alimentos\", \"distribucion de alimentos\", \"food distribution\", \"almacén frigorífico\", \"almacen frigorifico\", \"cadena de frío alimentaria\", \"food cold chain\"}))) AND ((host.services.protocol=\"MODBUS\" OR host.services.protocol=\"S7\" OR host.services.protocol=\"EIP\" OR host.services.protocol=\"CODESYS\" OR host.services.protocol=\"FINS\" OR host.services.protocol=\"MELSEC\" OR host.services.protocol=\"DNP3\" OR host.services.protocol=\"IEC60870_5_104\" OR host.services.protocol=\"OPC_UA\" OR host.services.protocol=\"BACNET\" OR host.services.protocol=\"FOX\" OR host.services.protocol=\"GE_SRTP\" OR host.services.protocol=\"PCWORX\" OR host.services.protocol=\"PRO_CON_OS\" OR host.services.protocol=\"PROFINET\" OR host.services.protocol=\"CMORE\" OR host.services.protocol=\"CMORE_HMI\" OR host.services.protocol=\"SCADA_VIEW\" OR host.services.protocol=\"REDLION_CRIMSON\" OR host.services.protocol=\"REDLION_WEB\"))) AND (NOT host.location.province: *)",
+        "field": "host.location.country_code",
+        "number_of_buckets": 2000,
+        "count_by_level": ".",
+        "filter_by_query": false
+      }
+    },
+    {
+      "id": "primary_remote_union",
+      "request": {
+        "query": "(((host.location.country_code=\"ES\") AND ((host.services.banner: {\"fertirrigación\", \"fertirrigacion\", \"fertigation\", \"comunidad de regantes\", \"comunidades de regantes\", \"riego agrícola\", \"riego agricola\", \"agricultural irrigation\", \"control de invernaderos\", \"greenhouse control\", \"explotación ganadera\", \"explotacion ganadera\", \"livestock farm\", \"industria alimentaria\", \"industria agroalimentaria\", \"procesado de alimentos\", \"food processing\", \"food production\", \"matadero\", \"slaughterhouse\", \"industria láctea\", \"industria lactea\", \"distribución alimentaria\", \"distribucion alimentaria\", \"distribución de alimentos\", \"distribucion de alimentos\", \"food distribution\", \"almacén frigorífico\", \"almacen frigorifico\", \"cadena de frío alimentaria\", \"food cold chain\"} OR host.services.endpoints.http.body: {\"fertirrigación\", \"fertirrigacion\", \"fertigation\", \"comunidad de regantes\", \"comunidades de regantes\", \"riego agrícola\", \"riego agricola\", \"agricultural irrigation\", \"control de invernaderos\", \"greenhouse control\", \"explotación ganadera\", \"explotacion ganadera\", \"livestock farm\", \"industria alimentaria\", \"industria agroalimentaria\", \"procesado de alimentos\", \"food processing\", \"food production\", \"matadero\", \"slaughterhouse\", \"industria láctea\", \"industria lactea\", \"distribución alimentaria\", \"distribucion alimentaria\", \"distribución de alimentos\", \"distribucion de alimentos\", \"food distribution\", \"almacén frigorífico\", \"almacen frigorifico\", \"cadena de frío alimentaria\", \"food cold chain\"}))) AND ((host.services.protocol=\"MODBUS\" OR host.services.protocol=\"S7\" OR host.services.protocol=\"EIP\" OR host.services.protocol=\"CODESYS\" OR host.services.protocol=\"FINS\" OR host.services.protocol=\"MELSEC\" OR host.services.protocol=\"DNP3\" OR host.services.protocol=\"IEC60870_5_104\" OR host.services.protocol=\"OPC_UA\" OR host.services.protocol=\"BACNET\" OR host.services.protocol=\"FOX\" OR host.services.protocol=\"GE_SRTP\" OR host.services.protocol=\"PCWORX\" OR host.services.protocol=\"PRO_CON_OS\" OR host.services.protocol=\"PROFINET\" OR host.services.protocol=\"CMORE\" OR host.services.protocol=\"CMORE_HMI\" OR host.services.protocol=\"SCADA_VIEW\" OR host.services.protocol=\"REDLION_CRIMSON\" OR host.services.protocol=\"REDLION_WEB\"))) AND ((host.services.protocol=\"SSH\" OR host.services.protocol=\"TELNET\" OR host.services.protocol=\"RDP\" OR host.services.protocol=\"VNC\" OR host.services.protocol=\"WINRM\" OR host.services.protocol=\"OPENVPN\" OR host.services.protocol=\"IKE\" OR host.services.protocol=\"PPTP\"))",
+        "field": "host.location.country_code",
+        "number_of_buckets": 2000,
+        "count_by_level": ".",
+        "filter_by_query": false
+      }
+    },
+    {
+      "id": "primary_iot_union",
+      "request": {
+        "query": "(((host.location.country_code=\"ES\") AND ((host.services.banner: {\"fertirrigación\", \"fertirrigacion\", \"fertigation\", \"comunidad de regantes\", \"comunidades de regantes\", \"riego agrícola\", \"riego agricola\", \"agricultural irrigation\", \"control de invernaderos\", \"greenhouse control\", \"explotación ganadera\", \"explotacion ganadera\", \"livestock farm\", \"industria alimentaria\", \"industria agroalimentaria\", \"procesado de alimentos\", \"food processing\", \"food production\", \"matadero\", \"slaughterhouse\", \"industria láctea\", \"industria lactea\", \"distribución alimentaria\", \"distribucion alimentaria\", \"distribución de alimentos\", \"distribucion de alimentos\", \"food distribution\", \"almacén frigorífico\", \"almacen frigorifico\", \"cadena de frío alimentaria\", \"food cold chain\"} OR host.services.endpoints.http.body: {\"fertirrigación\", \"fertirrigacion\", \"fertigation\", \"comunidad de regantes\", \"comunidades de regantes\", \"riego agrícola\", \"riego agricola\", \"agricultural irrigation\", \"control de invernaderos\", \"greenhouse control\", \"explotación ganadera\", \"explotacion ganadera\", \"livestock farm\", \"industria alimentaria\", \"industria agroalimentaria\", \"procesado de alimentos\", \"food processing\", \"food production\", \"matadero\", \"slaughterhouse\", \"industria láctea\", \"industria lactea\", \"distribución alimentaria\", \"distribucion alimentaria\", \"distribución de alimentos\", \"distribucion de alimentos\", \"food distribution\", \"almacén frigorífico\", \"almacen frigorifico\", \"cadena de frío alimentaria\", \"food cold chain\"}))) AND ((host.services.protocol=\"MODBUS\" OR host.services.protocol=\"S7\" OR host.services.protocol=\"EIP\" OR host.services.protocol=\"CODESYS\" OR host.services.protocol=\"FINS\" OR host.services.protocol=\"MELSEC\" OR host.services.protocol=\"DNP3\" OR host.services.protocol=\"IEC60870_5_104\" OR host.services.protocol=\"OPC_UA\" OR host.services.protocol=\"BACNET\" OR host.services.protocol=\"FOX\" OR host.services.protocol=\"GE_SRTP\" OR host.services.protocol=\"PCWORX\" OR host.services.protocol=\"PRO_CON_OS\" OR host.services.protocol=\"PROFINET\" OR host.services.protocol=\"CMORE\" OR host.services.protocol=\"CMORE_HMI\" OR host.services.protocol=\"SCADA_VIEW\" OR host.services.protocol=\"REDLION_CRIMSON\" OR host.services.protocol=\"REDLION_WEB\"))) AND ((host.services.protocol=\"MQTT\" OR host.services.protocol=\"COAP\"))",
+        "field": "host.location.country_code",
+        "number_of_buckets": 2000,
+        "count_by_level": ".",
+        "filter_by_query": false
+      }
+    },
+    {
+      "id": "lexical_remote_union",
+      "request": {
+        "query": "((host.location.country_code=\"ES\") AND ((host.services.banner: {\"fertirrigación\", \"fertirrigacion\", \"fertigation\", \"comunidad de regantes\", \"comunidades de regantes\", \"riego agrícola\", \"riego agricola\", \"agricultural irrigation\", \"control de invernaderos\", \"greenhouse control\", \"explotación ganadera\", \"explotacion ganadera\", \"livestock farm\", \"industria alimentaria\", \"industria agroalimentaria\", \"procesado de alimentos\", \"food processing\", \"food production\", \"matadero\", \"slaughterhouse\", \"industria láctea\", \"industria lactea\", \"distribución alimentaria\", \"distribucion alimentaria\", \"distribución de alimentos\", \"distribucion de alimentos\", \"food distribution\", \"almacén frigorífico\", \"almacen frigorifico\", \"cadena de frío alimentaria\", \"food cold chain\"} OR host.services.endpoints.http.body: {\"fertirrigación\", \"fertirrigacion\", \"fertigation\", \"comunidad de regantes\", \"comunidades de regantes\", \"riego agrícola\", \"riego agricola\", \"agricultural irrigation\", \"control de invernaderos\", \"greenhouse control\", \"explotación ganadera\", \"explotacion ganadera\", \"livestock farm\", \"industria alimentaria\", \"industria agroalimentaria\", \"procesado de alimentos\", \"food processing\", \"food production\", \"matadero\", \"slaughterhouse\", \"industria láctea\", \"industria lactea\", \"distribución alimentaria\", \"distribucion alimentaria\", \"distribución de alimentos\", \"distribucion de alimentos\", \"food distribution\", \"almacén frigorífico\", \"almacen frigorifico\", \"cadena de frío alimentaria\", \"food cold chain\"}))) AND ((host.services.protocol=\"SSH\" OR host.services.protocol=\"TELNET\" OR host.services.protocol=\"RDP\" OR host.services.protocol=\"VNC\" OR host.services.protocol=\"WINRM\" OR host.services.protocol=\"OPENVPN\" OR host.services.protocol=\"IKE\" OR host.services.protocol=\"PPTP\"))",
+        "field": "host.location.country_code",
+        "number_of_buckets": 2000,
+        "count_by_level": ".",
+        "filter_by_query": false
+      }
+    },
+    {
+      "id": "lexical_iot_union",
+      "request": {
+        "query": "((host.location.country_code=\"ES\") AND ((host.services.banner: {\"fertirrigación\", \"fertirrigacion\", \"fertigation\", \"comunidad de regantes\", \"comunidades de regantes\", \"riego agrícola\", \"riego agricola\", \"agricultural irrigation\", \"control de invernaderos\", \"greenhouse control\", \"explotación ganadera\", \"explotacion ganadera\", \"livestock farm\", \"industria alimentaria\", \"industria agroalimentaria\", \"procesado de alimentos\", \"food processing\", \"food production\", \"matadero\", \"slaughterhouse\", \"industria láctea\", \"industria lactea\", \"distribución alimentaria\", \"distribucion alimentaria\", \"distribución de alimentos\", \"distribucion de alimentos\", \"food distribution\", \"almacén frigorífico\", \"almacen frigorifico\", \"cadena de frío alimentaria\", \"food cold chain\"} OR host.services.endpoints.http.body: {\"fertirrigación\", \"fertirrigacion\", \"fertigation\", \"comunidad de regantes\", \"comunidades de regantes\", \"riego agrícola\", \"riego agricola\", \"agricultural irrigation\", \"control de invernaderos\", \"greenhouse control\", \"explotación ganadera\", \"explotacion ganadera\", \"livestock farm\", \"industria alimentaria\", \"industria agroalimentaria\", \"procesado de alimentos\", \"food processing\", \"food production\", \"matadero\", \"slaughterhouse\", \"industria láctea\", \"industria lactea\", \"distribución alimentaria\", \"distribucion alimentaria\", \"distribución de alimentos\", \"distribucion de alimentos\", \"food distribution\", \"almacén frigorífico\", \"almacen frigorifico\", \"cadena de frío alimentaria\", \"food cold chain\"}))) AND ((host.services.protocol=\"MQTT\" OR host.services.protocol=\"COAP\"))",
+        "field": "host.location.country_code",
+        "number_of_buckets": 2000,
+        "count_by_level": ".",
+        "filter_by_query": false
+      }
+    },
+    {
+      "id": "expanded_total",
+      "request": {
+        "query": "(host.location.country_code=\"ES\") AND (((host.services.banner: {\"fertirrigación\", \"fertirrigacion\", \"fertigation\", \"comunidad de regantes\", \"comunidades de regantes\", \"riego agrícola\", \"riego agricola\", \"agricultural irrigation\", \"control de invernaderos\", \"greenhouse control\", \"explotación ganadera\", \"explotacion ganadera\", \"livestock farm\", \"industria alimentaria\", \"industria agroalimentaria\", \"procesado de alimentos\", \"food processing\", \"food production\", \"matadero\", \"slaughterhouse\", \"industria láctea\", \"industria lactea\", \"distribución alimentaria\", \"distribucion alimentaria\", \"distribución de alimentos\", \"distribucion de alimentos\", \"food distribution\", \"almacén frigorífico\", \"almacen frigorifico\", \"cadena de frío alimentaria\", \"food cold chain\"} OR host.services.endpoints.http.body: {\"fertirrigación\", \"fertirrigacion\", \"fertigation\", \"comunidad de regantes\", \"comunidades de regantes\", \"riego agrícola\", \"riego agricola\", \"agricultural irrigation\", \"control de invernaderos\", \"greenhouse control\", \"explotación ganadera\", \"explotacion ganadera\", \"livestock farm\", \"industria alimentaria\", \"industria agroalimentaria\", \"procesado de alimentos\", \"food processing\", \"food production\", \"matadero\", \"slaughterhouse\", \"industria láctea\", \"industria lactea\", \"distribución alimentaria\", \"distribucion alimentaria\", \"distribución de alimentos\", \"distribucion de alimentos\", \"food distribution\", \"almacén frigorífico\", \"almacen frigorifico\", \"cadena de frío alimentaria\", \"food cold chain\"}) OR (host.services.banner: {\"regantes\", \"fertiriego\", \"irrigation\", \"invernadero\", \"greenhouse\", \"ganadería\", \"ganaderia\", \"agroalimentario\", \"agroalimentaria\", \"alimentación\", \"alimentacion\", \"agricultura\", \"agriculture\", \"horticulture\", \"horticultura\", \"avicultura\", \"poultry\", \"porcino\", \"lácteos\", \"lacteos\", \"cold storage\", \"cadena de frío\", \"cadena de frio\"} OR host.services.endpoints.http.body: {\"regantes\", \"fertiriego\", \"irrigation\", \"invernadero\", \"greenhouse\", \"ganadería\", \"ganaderia\", \"agroalimentario\", \"agroalimentaria\", \"alimentación\", \"alimentacion\", \"agricultura\", \"agriculture\", \"horticulture\", \"horticultura\", \"avicultura\", \"poultry\", \"porcino\", \"lácteos\", \"lacteos\", \"cold storage\", \"cadena de frío\", \"cadena de frio\"})))",
+        "field": "host.location.country_code",
+        "number_of_buckets": 2000,
+        "count_by_level": ".",
+        "filter_by_query": false
+      }
+    },
+    {
+      "id": "expanded_ics_total",
+      "request": {
+        "query": "(host.location.country_code=\"ES\") AND (((host.services.banner: {\"fertirrigación\", \"fertirrigacion\", \"fertigation\", \"comunidad de regantes\", \"comunidades de regantes\", \"riego agrícola\", \"riego agricola\", \"agricultural irrigation\", \"control de invernaderos\", \"greenhouse control\", \"explotación ganadera\", \"explotacion ganadera\", \"livestock farm\", \"industria alimentaria\", \"industria agroalimentaria\", \"procesado de alimentos\", \"food processing\", \"food production\", \"matadero\", \"slaughterhouse\", \"industria láctea\", \"industria lactea\", \"distribución alimentaria\", \"distribucion alimentaria\", \"distribución de alimentos\", \"distribucion de alimentos\", \"food distribution\", \"almacén frigorífico\", \"almacen frigorifico\", \"cadena de frío alimentaria\", \"food cold chain\"} OR host.services.endpoints.http.body: {\"fertirrigación\", \"fertirrigacion\", \"fertigation\", \"comunidad de regantes\", \"comunidades de regantes\", \"riego agrícola\", \"riego agricola\", \"agricultural irrigation\", \"control de invernaderos\", \"greenhouse control\", \"explotación ganadera\", \"explotacion ganadera\", \"livestock farm\", \"industria alimentaria\", \"industria agroalimentaria\", \"procesado de alimentos\", \"food processing\", \"food production\", \"matadero\", \"slaughterhouse\", \"industria láctea\", \"industria lactea\", \"distribución alimentaria\", \"distribucion alimentaria\", \"distribución de alimentos\", \"distribucion de alimentos\", \"food distribution\", \"almacén frigorífico\", \"almacen frigorifico\", \"cadena de frío alimentaria\", \"food cold chain\"}) OR (host.services.banner: {\"regantes\", \"fertiriego\", \"irrigation\", \"invernadero\", \"greenhouse\", \"ganadería\", \"ganaderia\", \"agroalimentario\", \"agroalimentaria\", \"alimentación\", \"alimentacion\", \"agricultura\", \"agriculture\", \"horticulture\", \"horticultura\", \"avicultura\", \"poultry\", \"porcino\", \"lácteos\", \"lacteos\", \"cold storage\", \"cadena de frío\", \"cadena de frio\"} OR host.services.endpoints.http.body: {\"regantes\", \"fertiriego\", \"irrigation\", \"invernadero\", \"greenhouse\", \"ganadería\", \"ganaderia\", \"agroalimentario\", \"agroalimentaria\", \"alimentación\", \"alimentacion\", \"agricultura\", \"agriculture\", \"horticulture\", \"horticultura\", \"avicultura\", \"poultry\", \"porcino\", \"lácteos\", \"lacteos\", \"cold storage\", \"cadena de frío\", \"cadena de frio\"}))) AND ((host.services.protocol=\"MODBUS\" OR host.services.protocol=\"S7\" OR host.services.protocol=\"EIP\" OR host.services.protocol=\"CODESYS\" OR host.services.protocol=\"FINS\" OR host.services.protocol=\"MELSEC\" OR host.services.protocol=\"DNP3\" OR host.services.protocol=\"IEC60870_5_104\" OR host.services.protocol=\"OPC_UA\" OR host.services.protocol=\"BACNET\" OR host.services.protocol=\"FOX\" OR host.services.protocol=\"GE_SRTP\" OR host.services.protocol=\"PCWORX\" OR host.services.protocol=\"PRO_CON_OS\" OR host.services.protocol=\"PROFINET\" OR host.services.protocol=\"CMORE\" OR host.services.protocol=\"CMORE_HMI\" OR host.services.protocol=\"SCADA_VIEW\" OR host.services.protocol=\"REDLION_CRIMSON\" OR host.services.protocol=\"REDLION_WEB\"))",
+        "field": "host.location.country_code",
+        "number_of_buckets": 2000,
+        "count_by_level": ".",
+        "filter_by_query": false
+      }
+    },
+    {
+      "id": "primary_cue_agr",
+      "request": {
+        "query": "(host.location.country_code=\"ES\") AND ((host.services.protocol=\"MODBUS\" OR host.services.protocol=\"S7\" OR host.services.protocol=\"EIP\" OR host.services.protocol=\"CODESYS\" OR host.services.protocol=\"FINS\" OR host.services.protocol=\"MELSEC\" OR host.services.protocol=\"DNP3\" OR host.services.protocol=\"IEC60870_5_104\" OR host.services.protocol=\"OPC_UA\" OR host.services.protocol=\"BACNET\" OR host.services.protocol=\"FOX\" OR host.services.protocol=\"GE_SRTP\" OR host.services.protocol=\"PCWORX\" OR host.services.protocol=\"PRO_CON_OS\" OR host.services.protocol=\"PROFINET\" OR host.services.protocol=\"CMORE\" OR host.services.protocol=\"CMORE_HMI\" OR host.services.protocol=\"SCADA_VIEW\" OR host.services.protocol=\"REDLION_CRIMSON\" OR host.services.protocol=\"REDLION_WEB\")) AND ((host.services.banner: {\"fertirrigación\", \"fertirrigacion\", \"fertigation\", \"comunidad de regantes\", \"comunidades de regantes\", \"riego agrícola\", \"riego agricola\", \"agricultural irrigation\", \"control de invernaderos\", \"greenhouse control\", \"explotación ganadera\", \"explotacion ganadera\", \"livestock farm\"} OR host.services.endpoints.http.body: {\"fertirrigación\", \"fertirrigacion\", \"fertigation\", \"comunidad de regantes\", \"comunidades de regantes\", \"riego agrícola\", \"riego agricola\", \"agricultural irrigation\", \"control de invernaderos\", \"greenhouse control\", \"explotación ganadera\", \"explotacion ganadera\", \"livestock farm\"}))",
+        "field": "host.location.country_code",
+        "number_of_buckets": 2000,
+        "count_by_level": ".",
+        "filter_by_query": false
+      }
+    },
+    {
+      "id": "primary_cue_iab",
+      "request": {
+        "query": "(host.location.country_code=\"ES\") AND ((host.services.protocol=\"MODBUS\" OR host.services.protocol=\"S7\" OR host.services.protocol=\"EIP\" OR host.services.protocol=\"CODESYS\" OR host.services.protocol=\"FINS\" OR host.services.protocol=\"MELSEC\" OR host.services.protocol=\"DNP3\" OR host.services.protocol=\"IEC60870_5_104\" OR host.services.protocol=\"OPC_UA\" OR host.services.protocol=\"BACNET\" OR host.services.protocol=\"FOX\" OR host.services.protocol=\"GE_SRTP\" OR host.services.protocol=\"PCWORX\" OR host.services.protocol=\"PRO_CON_OS\" OR host.services.protocol=\"PROFINET\" OR host.services.protocol=\"CMORE\" OR host.services.protocol=\"CMORE_HMI\" OR host.services.protocol=\"SCADA_VIEW\" OR host.services.protocol=\"REDLION_CRIMSON\" OR host.services.protocol=\"REDLION_WEB\")) AND ((host.services.banner: {\"industria alimentaria\", \"industria agroalimentaria\", \"procesado de alimentos\", \"food processing\", \"food production\", \"matadero\", \"slaughterhouse\", \"industria láctea\", \"industria lactea\"} OR host.services.endpoints.http.body: {\"industria alimentaria\", \"industria agroalimentaria\", \"procesado de alimentos\", \"food processing\", \"food production\", \"matadero\", \"slaughterhouse\", \"industria láctea\", \"industria lactea\"}))",
+        "field": "host.location.country_code",
+        "number_of_buckets": 2000,
+        "count_by_level": ".",
+        "filter_by_query": false
+      }
+    },
+    {
+      "id": "primary_cue_ret",
+      "request": {
+        "query": "(host.location.country_code=\"ES\") AND ((host.services.protocol=\"MODBUS\" OR host.services.protocol=\"S7\" OR host.services.protocol=\"EIP\" OR host.services.protocol=\"CODESYS\" OR host.services.protocol=\"FINS\" OR host.services.protocol=\"MELSEC\" OR host.services.protocol=\"DNP3\" OR host.services.protocol=\"IEC60870_5_104\" OR host.services.protocol=\"OPC_UA\" OR host.services.protocol=\"BACNET\" OR host.services.protocol=\"FOX\" OR host.services.protocol=\"GE_SRTP\" OR host.services.protocol=\"PCWORX\" OR host.services.protocol=\"PRO_CON_OS\" OR host.services.protocol=\"PROFINET\" OR host.services.protocol=\"CMORE\" OR host.services.protocol=\"CMORE_HMI\" OR host.services.protocol=\"SCADA_VIEW\" OR host.services.protocol=\"REDLION_CRIMSON\" OR host.services.protocol=\"REDLION_WEB\")) AND ((host.services.banner: {\"distribución alimentaria\", \"distribucion alimentaria\", \"distribución de alimentos\", \"distribucion de alimentos\", \"food distribution\", \"almacén frigorífico\", \"almacen frigorifico\", \"cadena de frío alimentaria\", \"food cold chain\"} OR host.services.endpoints.http.body: {\"distribución alimentaria\", \"distribucion alimentaria\", \"distribución de alimentos\", \"distribucion de alimentos\", \"food distribution\", \"almacén frigorífico\", \"almacen frigorifico\", \"cadena de frío alimentaria\", \"food cold chain\"}))",
+        "field": "host.location.country_code",
+        "number_of_buckets": 2000,
+        "count_by_level": ".",
+        "filter_by_query": false
+      }
+    },
+    {
+      "id": "primary_device_plc",
+      "request": {
+        "query": "(((host.location.country_code=\"ES\") AND ((host.services.banner: {\"fertirrigación\", \"fertirrigacion\", \"fertigation\", \"comunidad de regantes\", \"comunidades de regantes\", \"riego agrícola\", \"riego agricola\", \"agricultural irrigation\", \"control de invernaderos\", \"greenhouse control\", \"explotación ganadera\", \"explotacion ganadera\", \"livestock farm\", \"industria alimentaria\", \"industria agroalimentaria\", \"procesado de alimentos\", \"food processing\", \"food production\", \"matadero\", \"slaughterhouse\", \"industria láctea\", \"industria lactea\", \"distribución alimentaria\", \"distribucion alimentaria\", \"distribución de alimentos\", \"distribucion de alimentos\", \"food distribution\", \"almacén frigorífico\", \"almacen frigorifico\", \"cadena de frío alimentaria\", \"food cold chain\"} OR host.services.endpoints.http.body: {\"fertirrigación\", \"fertirrigacion\", \"fertigation\", \"comunidad de regantes\", \"comunidades de regantes\", \"riego agrícola\", \"riego agricola\", \"agricultural irrigation\", \"control de invernaderos\", \"greenhouse control\", \"explotación ganadera\", \"explotacion ganadera\", \"livestock farm\", \"industria alimentaria\", \"industria agroalimentaria\", \"procesado de alimentos\", \"food processing\", \"food production\", \"matadero\", \"slaughterhouse\", \"industria láctea\", \"industria lactea\", \"distribución alimentaria\", \"distribucion alimentaria\", \"distribución de alimentos\", \"distribucion de alimentos\", \"food distribution\", \"almacén frigorífico\", \"almacen frigorifico\", \"cadena de frío alimentaria\", \"food cold chain\"}))) AND ((host.services.protocol=\"MODBUS\" OR host.services.protocol=\"S7\" OR host.services.protocol=\"EIP\" OR host.services.protocol=\"CODESYS\" OR host.services.protocol=\"FINS\" OR host.services.protocol=\"MELSEC\" OR host.services.protocol=\"DNP3\" OR host.services.protocol=\"IEC60870_5_104\" OR host.services.protocol=\"OPC_UA\" OR host.services.protocol=\"BACNET\" OR host.services.protocol=\"FOX\" OR host.services.protocol=\"GE_SRTP\" OR host.services.protocol=\"PCWORX\" OR host.services.protocol=\"PRO_CON_OS\" OR host.services.protocol=\"PROFINET\" OR host.services.protocol=\"CMORE\" OR host.services.protocol=\"CMORE_HMI\" OR host.services.protocol=\"SCADA_VIEW\" OR host.services.protocol=\"REDLION_CRIMSON\" OR host.services.protocol=\"REDLION_WEB\"))) AND ((host.hardware.product: {\"PLC\", \"programmable logic controller\"} OR host.services.hardware.product: {\"PLC\", \"programmable logic controller\"} OR host.services.software.product: {\"PLC\", \"programmable logic controller\"}))",
+        "field": "host.location.country_code",
+        "number_of_buckets": 2000,
+        "count_by_level": ".",
+        "filter_by_query": false
+      }
+    },
+    {
+      "id": "primary_device_rtu",
+      "request": {
+        "query": "(((host.location.country_code=\"ES\") AND ((host.services.banner: {\"fertirrigación\", \"fertirrigacion\", \"fertigation\", \"comunidad de regantes\", \"comunidades de regantes\", \"riego agrícola\", \"riego agricola\", \"agricultural irrigation\", \"control de invernaderos\", \"greenhouse control\", \"explotación ganadera\", \"explotacion ganadera\", \"livestock farm\", \"industria alimentaria\", \"industria agroalimentaria\", \"procesado de alimentos\", \"food processing\", \"food production\", \"matadero\", \"slaughterhouse\", \"industria láctea\", \"industria lactea\", \"distribución alimentaria\", \"distribucion alimentaria\", \"distribución de alimentos\", \"distribucion de alimentos\", \"food distribution\", \"almacén frigorífico\", \"almacen frigorifico\", \"cadena de frío alimentaria\", \"food cold chain\"} OR host.services.endpoints.http.body: {\"fertirrigación\", \"fertirrigacion\", \"fertigation\", \"comunidad de regantes\", \"comunidades de regantes\", \"riego agrícola\", \"riego agricola\", \"agricultural irrigation\", \"control de invernaderos\", \"greenhouse control\", \"explotación ganadera\", \"explotacion ganadera\", \"livestock farm\", \"industria alimentaria\", \"industria agroalimentaria\", \"procesado de alimentos\", \"food processing\", \"food production\", \"matadero\", \"slaughterhouse\", \"industria láctea\", \"industria lactea\", \"distribución alimentaria\", \"distribucion alimentaria\", \"distribución de alimentos\", \"distribucion de alimentos\", \"food distribution\", \"almacén frigorífico\", \"almacen frigorifico\", \"cadena de frío alimentaria\", \"food cold chain\"}))) AND ((host.services.protocol=\"MODBUS\" OR host.services.protocol=\"S7\" OR host.services.protocol=\"EIP\" OR host.services.protocol=\"CODESYS\" OR host.services.protocol=\"FINS\" OR host.services.protocol=\"MELSEC\" OR host.services.protocol=\"DNP3\" OR host.services.protocol=\"IEC60870_5_104\" OR host.services.protocol=\"OPC_UA\" OR host.services.protocol=\"BACNET\" OR host.services.protocol=\"FOX\" OR host.services.protocol=\"GE_SRTP\" OR host.services.protocol=\"PCWORX\" OR host.services.protocol=\"PRO_CON_OS\" OR host.services.protocol=\"PROFINET\" OR host.services.protocol=\"CMORE\" OR host.services.protocol=\"CMORE_HMI\" OR host.services.protocol=\"SCADA_VIEW\" OR host.services.protocol=\"REDLION_CRIMSON\" OR host.services.protocol=\"REDLION_WEB\"))) AND ((host.hardware.product: {\"RTU\", \"remote terminal unit\"} OR host.services.hardware.product: {\"RTU\", \"remote terminal unit\"} OR host.services.software.product: {\"RTU\", \"remote terminal unit\"}))",
+        "field": "host.location.country_code",
+        "number_of_buckets": 2000,
+        "count_by_level": ".",
+        "filter_by_query": false
+      }
+    },
+    {
+      "id": "primary_device_hmi_scada",
+      "request": {
+        "query": "(((host.location.country_code=\"ES\") AND ((host.services.banner: {\"fertirrigación\", \"fertirrigacion\", \"fertigation\", \"comunidad de regantes\", \"comunidades de regantes\", \"riego agrícola\", \"riego agricola\", \"agricultural irrigation\", \"control de invernaderos\", \"greenhouse control\", \"explotación ganadera\", \"explotacion ganadera\", \"livestock farm\", \"industria alimentaria\", \"industria agroalimentaria\", \"procesado de alimentos\", \"food processing\", \"food production\", \"matadero\", \"slaughterhouse\", \"industria láctea\", \"industria lactea\", \"distribución alimentaria\", \"distribucion alimentaria\", \"distribución de alimentos\", \"distribucion de alimentos\", \"food distribution\", \"almacén frigorífico\", \"almacen frigorifico\", \"cadena de frío alimentaria\", \"food cold chain\"} OR host.services.endpoints.http.body: {\"fertirrigación\", \"fertirrigacion\", \"fertigation\", \"comunidad de regantes\", \"comunidades de regantes\", \"riego agrícola\", \"riego agricola\", \"agricultural irrigation\", \"control de invernaderos\", \"greenhouse control\", \"explotación ganadera\", \"explotacion ganadera\", \"livestock farm\", \"industria alimentaria\", \"industria agroalimentaria\", \"procesado de alimentos\", \"food processing\", \"food production\", \"matadero\", \"slaughterhouse\", \"industria láctea\", \"industria lactea\", \"distribución alimentaria\", \"distribucion alimentaria\", \"distribución de alimentos\", \"distribucion de alimentos\", \"food distribution\", \"almacén frigorífico\", \"almacen frigorifico\", \"cadena de frío alimentaria\", \"food cold chain\"}))) AND ((host.services.protocol=\"MODBUS\" OR host.services.protocol=\"S7\" OR host.services.protocol=\"EIP\" OR host.services.protocol=\"CODESYS\" OR host.services.protocol=\"FINS\" OR host.services.protocol=\"MELSEC\" OR host.services.protocol=\"DNP3\" OR host.services.protocol=\"IEC60870_5_104\" OR host.services.protocol=\"OPC_UA\" OR host.services.protocol=\"BACNET\" OR host.services.protocol=\"FOX\" OR host.services.protocol=\"GE_SRTP\" OR host.services.protocol=\"PCWORX\" OR host.services.protocol=\"PRO_CON_OS\" OR host.services.protocol=\"PROFINET\" OR host.services.protocol=\"CMORE\" OR host.services.protocol=\"CMORE_HMI\" OR host.services.protocol=\"SCADA_VIEW\" OR host.services.protocol=\"REDLION_CRIMSON\" OR host.services.protocol=\"REDLION_WEB\"))) AND ((host.hardware.product: {\"HMI\", \"SCADA\"} OR host.services.hardware.product: {\"HMI\", \"SCADA\"} OR host.services.software.product: {\"HMI\", \"SCADA\"}))",
+        "field": "host.location.country_code",
+        "number_of_buckets": 2000,
+        "count_by_level": ".",
+        "filter_by_query": false
+      }
+    },
+    {
+      "id": "primary_device_gateway",
+      "request": {
+        "query": "(((host.location.country_code=\"ES\") AND ((host.services.banner: {\"fertirrigación\", \"fertirrigacion\", \"fertigation\", \"comunidad de regantes\", \"comunidades de regantes\", \"riego agrícola\", \"riego agricola\", \"agricultural irrigation\", \"control de invernaderos\", \"greenhouse control\", \"explotación ganadera\", \"explotacion ganadera\", \"livestock farm\", \"industria alimentaria\", \"industria agroalimentaria\", \"procesado de alimentos\", \"food processing\", \"food production\", \"matadero\", \"slaughterhouse\", \"industria láctea\", \"industria lactea\", \"distribución alimentaria\", \"distribucion alimentaria\", \"distribución de alimentos\", \"distribucion de alimentos\", \"food distribution\", \"almacén frigorífico\", \"almacen frigorifico\", \"cadena de frío alimentaria\", \"food cold chain\"} OR host.services.endpoints.http.body: {\"fertirrigación\", \"fertirrigacion\", \"fertigation\", \"comunidad de regantes\", \"comunidades de regantes\", \"riego agrícola\", \"riego agricola\", \"agricultural irrigation\", \"control de invernaderos\", \"greenhouse control\", \"explotación ganadera\", \"explotacion ganadera\", \"livestock farm\", \"industria alimentaria\", \"industria agroalimentaria\", \"procesado de alimentos\", \"food processing\", \"food production\", \"matadero\", \"slaughterhouse\", \"industria láctea\", \"industria lactea\", \"distribución alimentaria\", \"distribucion alimentaria\", \"distribución de alimentos\", \"distribucion de alimentos\", \"food distribution\", \"almacén frigorífico\", \"almacen frigorifico\", \"cadena de frío alimentaria\", \"food cold chain\"}))) AND ((host.services.protocol=\"MODBUS\" OR host.services.protocol=\"S7\" OR host.services.protocol=\"EIP\" OR host.services.protocol=\"CODESYS\" OR host.services.protocol=\"FINS\" OR host.services.protocol=\"MELSEC\" OR host.services.protocol=\"DNP3\" OR host.services.protocol=\"IEC60870_5_104\" OR host.services.protocol=\"OPC_UA\" OR host.services.protocol=\"BACNET\" OR host.services.protocol=\"FOX\" OR host.services.protocol=\"GE_SRTP\" OR host.services.protocol=\"PCWORX\" OR host.services.protocol=\"PRO_CON_OS\" OR host.services.protocol=\"PROFINET\" OR host.services.protocol=\"CMORE\" OR host.services.protocol=\"CMORE_HMI\" OR host.services.protocol=\"SCADA_VIEW\" OR host.services.protocol=\"REDLION_CRIMSON\" OR host.services.protocol=\"REDLION_WEB\"))) AND ((host.hardware.product: {\"gateway\", \"industrial gateway\"} OR host.services.hardware.product: {\"gateway\", \"industrial gateway\"} OR host.services.software.product: {\"gateway\", \"industrial gateway\"}))",
+        "field": "host.location.country_code",
+        "number_of_buckets": 2000,
+        "count_by_level": ".",
+        "filter_by_query": false
+      }
+    },
+    {
+      "id": "primary_device_unclassified",
+      "request": {
+        "query": "(((host.location.country_code=\"ES\") AND ((host.services.banner: {\"fertirrigación\", \"fertirrigacion\", \"fertigation\", \"comunidad de regantes\", \"comunidades de regantes\", \"riego agrícola\", \"riego agricola\", \"agricultural irrigation\", \"control de invernaderos\", \"greenhouse control\", \"explotación ganadera\", \"explotacion ganadera\", \"livestock farm\", \"industria alimentaria\", \"industria agroalimentaria\", \"procesado de alimentos\", \"food processing\", \"food production\", \"matadero\", \"slaughterhouse\", \"industria láctea\", \"industria lactea\", \"distribución alimentaria\", \"distribucion alimentaria\", \"distribución de alimentos\", \"distribucion de alimentos\", \"food distribution\", \"almacén frigorífico\", \"almacen frigorifico\", \"cadena de frío alimentaria\", \"food cold chain\"} OR host.services.endpoints.http.body: {\"fertirrigación\", \"fertirrigacion\", \"fertigation\", \"comunidad de regantes\", \"comunidades de regantes\", \"riego agrícola\", \"riego agricola\", \"agricultural irrigation\", \"control de invernaderos\", \"greenhouse control\", \"explotación ganadera\", \"explotacion ganadera\", \"livestock farm\", \"industria alimentaria\", \"industria agroalimentaria\", \"procesado de alimentos\", \"food processing\", \"food production\", \"matadero\", \"slaughterhouse\", \"industria láctea\", \"industria lactea\", \"distribución alimentaria\", \"distribucion alimentaria\", \"distribución de alimentos\", \"distribucion de alimentos\", \"food distribution\", \"almacén frigorífico\", \"almacen frigorifico\", \"cadena de frío alimentaria\", \"food cold chain\"}))) AND ((host.services.protocol=\"MODBUS\" OR host.services.protocol=\"S7\" OR host.services.protocol=\"EIP\" OR host.services.protocol=\"CODESYS\" OR host.services.protocol=\"FINS\" OR host.services.protocol=\"MELSEC\" OR host.services.protocol=\"DNP3\" OR host.services.protocol=\"IEC60870_5_104\" OR host.services.protocol=\"OPC_UA\" OR host.services.protocol=\"BACNET\" OR host.services.protocol=\"FOX\" OR host.services.protocol=\"GE_SRTP\" OR host.services.protocol=\"PCWORX\" OR host.services.protocol=\"PRO_CON_OS\" OR host.services.protocol=\"PROFINET\" OR host.services.protocol=\"CMORE\" OR host.services.protocol=\"CMORE_HMI\" OR host.services.protocol=\"SCADA_VIEW\" OR host.services.protocol=\"REDLION_CRIMSON\" OR host.services.protocol=\"REDLION_WEB\"))) AND (NOT ((host.hardware.product: {\"PLC\", \"programmable logic controller\"} OR host.services.hardware.product: {\"PLC\", \"programmable logic controller\"} OR host.services.software.product: {\"PLC\", \"programmable logic controller\"}) OR (host.hardware.product: {\"RTU\", \"remote terminal unit\"} OR host.services.hardware.product: {\"RTU\", \"remote terminal unit\"} OR host.services.software.product: {\"RTU\", \"remote terminal unit\"}) OR (host.hardware.product: {\"HMI\", \"SCADA\"} OR host.services.hardware.product: {\"HMI\", \"SCADA\"} OR host.services.software.product: {\"HMI\", \"SCADA\"}) OR (host.hardware.product: {\"gateway\", \"industrial gateway\"} OR host.services.hardware.product: {\"gateway\", \"industrial gateway\"} OR host.services.software.product: {\"gateway\", \"industrial gateway\"})))",
+        "field": "host.location.country_code",
+        "number_of_buckets": 2000,
+        "count_by_level": ".",
+        "filter_by_query": false
+      }
+    },
+    {
+      "id": "primary_total_end",
+      "request": {
+        "query": "((host.location.country_code=\"ES\") AND ((host.services.banner: {\"fertirrigación\", \"fertirrigacion\", \"fertigation\", \"comunidad de regantes\", \"comunidades de regantes\", \"riego agrícola\", \"riego agricola\", \"agricultural irrigation\", \"control de invernaderos\", \"greenhouse control\", \"explotación ganadera\", \"explotacion ganadera\", \"livestock farm\", \"industria alimentaria\", \"industria agroalimentaria\", \"procesado de alimentos\", \"food processing\", \"food production\", \"matadero\", \"slaughterhouse\", \"industria láctea\", \"industria lactea\", \"distribución alimentaria\", \"distribucion alimentaria\", \"distribución de alimentos\", \"distribucion de alimentos\", \"food distribution\", \"almacén frigorífico\", \"almacen frigorifico\", \"cadena de frío alimentaria\", \"food cold chain\"} OR host.services.endpoints.http.body: {\"fertirrigación\", \"fertirrigacion\", \"fertigation\", \"comunidad de regantes\", \"comunidades de regantes\", \"riego agrícola\", \"riego agricola\", \"agricultural irrigation\", \"control de invernaderos\", \"greenhouse control\", \"explotación ganadera\", \"explotacion ganadera\", \"livestock farm\", \"industria alimentaria\", \"industria agroalimentaria\", \"procesado de alimentos\", \"food processing\", \"food production\", \"matadero\", \"slaughterhouse\", \"industria láctea\", \"industria lactea\", \"distribución alimentaria\", \"distribucion alimentaria\", \"distribución de alimentos\", \"distribucion de alimentos\", \"food distribution\", \"almacén frigorífico\", \"almacen frigorifico\", \"cadena de frío alimentaria\", \"food cold chain\"}))) AND ((host.services.protocol=\"MODBUS\" OR host.services.protocol=\"S7\" OR host.services.protocol=\"EIP\" OR host.services.protocol=\"CODESYS\" OR host.services.protocol=\"FINS\" OR host.services.protocol=\"MELSEC\" OR host.services.protocol=\"DNP3\" OR host.services.protocol=\"IEC60870_5_104\" OR host.services.protocol=\"OPC_UA\" OR host.services.protocol=\"BACNET\" OR host.services.protocol=\"FOX\" OR host.services.protocol=\"GE_SRTP\" OR host.services.protocol=\"PCWORX\" OR host.services.protocol=\"PRO_CON_OS\" OR host.services.protocol=\"PROFINET\" OR host.services.protocol=\"CMORE\" OR host.services.protocol=\"CMORE_HMI\" OR host.services.protocol=\"SCADA_VIEW\" OR host.services.protocol=\"REDLION_CRIMSON\" OR host.services.protocol=\"REDLION_WEB\"))",
+        "field": "host.location.country_code",
+        "number_of_buckets": 2000,
+        "count_by_level": ".",
+        "filter_by_query": false
+      }
+    }
+  ]
+}

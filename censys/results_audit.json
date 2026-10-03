@@ -1,0 +1,181 @@
+{
+  "source": "censys_results.json",
+  "source_sha256": "5edf075627d80dbd41472c4334ba10809dcc402b68a81170e5814d733efbf428",
+  "generated_utc": "2026-09-30T20:18:31.087507+00:00",
+  "query_count": 37,
+  "errors": {
+    "vulns_ot": 401,
+    "vulns_remote": 401
+  },
+  "sums_checked": 35,
+  "geographical_margins": {
+    "spain_by_province": {
+      "returned_region_sum": 2482357,
+      "arc_sum": 939998,
+      "arc_share_percent": 37.86715609398648
+    },
+    "ot_502": {
+      "returned_region_sum": 2608,
+      "arc_sum": 717,
+      "arc_share_percent": 27.492331288343557
+    },
+    "ot_102": {
+      "returned_region_sum": 792,
+      "arc_sum": 227,
+      "arc_share_percent": 28.661616161616163
+    },
+    "ot_20000": {
+      "returned_region_sum": 2567,
+      "arc_sum": 701,
+      "arc_share_percent": 27.308141799766265
+    },
+    "ot_47808": {
+      "returned_region_sum": 204,
+      "arc_sum": 29,
+      "arc_share_percent": 14.215686274509803
+    },
+    "ot_44818": {
+      "returned_region_sum": 764,
+      "arc_sum": 137,
+      "arc_share_percent": 17.93193717277487
+    },
+    "ot_2404": {
+      "returned_region_sum": 216,
+      "arc_sum": 16,
+      "arc_share_percent": 7.407407407407407
+    },
+    "ot_4840": {
+      "returned_region_sum": 677,
+      "arc_sum": 43,
+      "arc_share_percent": 6.3515509601181686
+    },
+    "ot_9600": {
+      "returned_region_sum": 999,
+      "arc_sum": 541,
+      "arc_share_percent": 54.154154154154156
+    },
+    "ot_1911": {
+      "returned_region_sum": 370,
+      "arc_sum": 35,
+      "arc_share_percent": 9.45945945945946
+    },
+    "ot_20547": {
+      "returned_region_sum": 372,
+      "arc_sum": 8,
+      "arc_share_percent": 2.150537634408602
+    },
+    "ot_all_by_province": {
+      "returned_region_sum": 8881,
+      "arc_sum": 2387,
+      "arc_share_percent": 26.877603873437675
+    },
+    "iot_1883": {
+      "returned_region_sum": 2150,
+      "arc_sum": 753,
+      "arc_share_percent": 35.02325581395349
+    },
+    "iot_8883": {
+      "returned_region_sum": 1447,
+      "arc_sum": 469,
+      "arc_share_percent": 32.41188666205943
+    },
+    "iot_5683": {
+      "returned_region_sum": 105,
+      "arc_sum": 36,
+      "arc_share_percent": 34.285714285714285
+    },
+    "ra_3389": {
+      "returned_region_sum": 17924,
+      "arc_sum": 6382,
+      "arc_share_percent": 35.6058915420665
+    },
+    "ra_5900": {
+      "returned_region_sum": 3644,
+      "arc_sum": 1410,
+      "arc_share_percent": 38.693743139407246
+    },
+    "ra_5901": {
+      "returned_region_sum": 927,
+      "arc_sum": 277,
+      "arc_share_percent": 29.88133764832794
+    },
+    "ra_23": {
+      "returned_region_sum": 7111,
+      "arc_sum": 2906,
+      "arc_share_percent": 40.86626353536774
+    },
+    "ra_22": {
+      "returned_region_sum": 150856,
+      "arc_sum": 35043,
+      "arc_share_percent": 23.229437344222305
+    },
+    "ra_plus_ot": {
+      "returned_region_sum": 1286,
+      "arc_sum": 248,
+      "arc_share_percent": 19.2846034214619
+    },
+    "db_1433": {
+      "returned_region_sum": 3709,
+      "arc_sum": 1321,
+      "arc_share_percent": 35.616069021299545
+    },
+    "db_3306": {
+      "returned_region_sum": 25442,
+      "arc_sum": 10797,
+      "arc_share_percent": 42.43770143856615
+    },
+    "db_5432": {
+      "returned_region_sum": 3140,
+      "arc_sum": 624,
+      "arc_share_percent": 19.872611464968152
+    },
+    "db_27017": {
+      "returned_region_sum": 883,
+      "arc_sum": 63,
+      "arc_share_percent": 7.134767836919592
+    },
+    "db_9200": {
+      "returned_region_sum": 611,
+      "arc_sum": 187,
+      "arc_share_percent": 30.605564648117838
+    },
+    "label_ics": {
+      "returned_region_sum": 0,
+      "arc_sum": 0,
+      "arc_share_percent": null
+    },
+    "label_human_machine_interface": {
+      "returned_region_sum": 0,
+      "arc_sum": 0,
+      "arc_share_percent": null
+    },
+    "label_iot": {
+      "returned_region_sum": 0,
+      "arc_sum": 0,
+      "arc_share_percent": null
+    },
+    "label_remote_access": {
+      "returned_region_sum": 0,
+      "arc_sum": 0,
+      "arc_share_percent": null
+    },
+    "label_network_camera": {
+      "returned_region_sum": 0,
+      "arc_sum": 0,
+      "arc_share_percent": null
+    }
+  },
+  "bucket_limits_reached": [
+    "spain_service_mix",
+    "ot_vendors",
+    "ot_products"
+  ],
+  "provenance": "user confirmed live Censys API queries; numerical checks do not independently authenticate origin",
+  "subset_checks": "passed for all returned geographical buckets",
+  "derived": {
+    "remote_port_cooccurrence_percent": 14.480351311789214,
+    "arc_remote_port_cooccurrence_percent": 10.38961038961039,
+    "madrid_aragon_industrial_share_percent": 55.77074653755208,
+    "industrial_port_marginal_sum": 9569
+  }
+}

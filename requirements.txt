@@ -1,0 +1,9 @@
+# Tested with Python 3.12.3 on Linux (TeX Live 2026 for the manuscript).
+# Versions used for the results reported in the manuscript:
+numpy==1.26.4
+scipy==1.11.4
+matplotlib==3.6.3
+openpyxl==3.1.5
+# Any numpy>=1.24, scipy>=1.10, matplotlib>=3.6, openpyxl>=3.1 should reproduce
+# the point values; Monte Carlo percentiles depend on numpy's Generator (PCG64)
+# stream, which is stable across these versions.

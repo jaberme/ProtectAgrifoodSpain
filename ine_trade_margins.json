@@ -1,0 +1,55 @@
+{
+  "source": "INE, Tablas de Origen y Destino 2022 (cne_tod_22.xlsx, Tabla 1) e INE EEE Comercio 2022 (tabla 76818)",
+  "trade_services_output_MEUR": {
+    "64": 146297.69999999998,
+    "65": 98798.70000000006,
+    "total": 245096.40000000002
+  },
+  "trade_margin_column_MEUR": {
+    "64": -135233.2,
+    "65": -98798.7,
+    "net_total": 234031.90000000002
+  },
+  "agrifood_margins_MEUR": {
+    "1": 15659.3,
+    "2": 2431.4,
+    "5": 1300.5,
+    "11": 7177.6,
+    "12": 1778.3,
+    "13": 1663.9,
+    "14": 4274.4,
+    "15": 18445.1,
+    "16": 2404.4,
+    "17": 1513.6,
+    "18": 3969.9,
+    "total": 60618.4
+  },
+  "agrifood_share_of_RET_output": 0.24732472610776818,
+  "meat_products_output_MEUR": 44333.19999999999,
+  "meat_share_of_IAB_output": 0.2766234779163325,
+  "S2_share_of_meat_output": 0.7230044300885118,
+  "trade_turnover_2022_MEUR": 863229.215,
+  "net_margin_rate": 0.27111211707541666,
+  "output_to_turnover_rate": 0.28392968604520646,
+  "largest_grocer": {
+    "net_sales_spain_2025_MEUR": 36269.92087534044,
+    "margin_basis_output_MEUR": [
+      9833.215034671395,
+      10298.10724701989
+    ],
+    "share_of_RET": [
+      0.0401197856625858,
+      0.042016558574584896
+    ],
+    "sigma_R1": 0.04
+  },
+  "previous_R1": {
+    "q": 0.18,
+    "margins_MEUR": 44117.352,
+    "share_of_agrifood_margins": 0.7277881303366635,
+    "largest_grocer_equivalents": [
+      4.48656434792126,
+      4.28402530113161
+    ]
+  }
+}
