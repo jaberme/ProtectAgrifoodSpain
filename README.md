@@ -2,7 +2,7 @@
   <img src="agri-food-cyber-climate-banner.png" alt="Cyber attack on irrigation control cascading through Spain's agri-food chain: farm, food industry, logistics, retail, under heatwave conditions" width="100%">
 </p>
 
-# Dynamic inoperability analysis of Spain's agri-food system — reproduction set
+# Dynamic inoperability analysis of Spain's agri-food system: reproduction set
 
 Code and data that reproduce every number, table and figure of
 
