@@ -294,14 +294,14 @@ Stage 16 writes the figures below to `../figs/`. Each panel is drawn from the JS
 
 <table>
 <tr>
-<td width="33%" align="center"><img src="../figs/fig_gamma.png" alt="fig_gamma" width="100%"><br><em>(a) <code>fig_gamma</code>: point loss, P5–P95 envelope and P50 by scenario.</em></td>
-<td width="33%" align="center"><img src="../figs/fig_cascade.png" alt="fig_cascade" width="100%"><br><em>(b) <code>fig_cascade</code>: S2 trajectories of the targeted and coupled sectors.</em></td>
-<td width="33%" align="center"><img src="../figs/fig_shapes.png" alt="fig_shapes" width="100%"><br><em>(c) <code>fig_shapes</code>: temporal forms of the targeted sector's recovery (S1).</em></td>
+<td width="33%" align="center"><img src="./figs/fig_gamma.png" alt="fig_gamma" width="100%"><br><em>(a) <code>fig_gamma</code>: point loss, P5–P95 envelope and P50 by scenario.</em></td>
+<td width="33%" align="center"><img src="./figs/fig_cascade.png" alt="fig_cascade" width="100%"><br><em>(b) <code>fig_cascade</code>: S2 trajectories of the targeted and coupled sectors.</em></td>
+<td width="33%" align="center"><img src="./figs/fig_shapes.png" alt="fig_shapes" width="100%"><br><em>(c) <code>fig_shapes</code>: temporal forms of the targeted sector's recovery (S1).</em></td>
 </tr>
 <tr>
-<td colspan="1" align="center"><img src="../figs/fig_dualrank.png" alt="fig_dualrank" width="100%"><br><em>(d) <code>fig_dualrank</code>: S2 dual ranking as two aligned panels.</em></td>
-<td colspan="1" align="center"><img src="../figs/fig_criteria.png" alt="fig_criteria" width="100%"><br><em>(e) <code>fig_criteria</code>: rank of each focal sector under w, m, v and w with trade split.</em></td>
-<td colspan="1" align="center"><img src="../figs/fig_uncertainty.png" alt="fig_uncertainty" width="100%"><br><em>(f) <code>fig_uncertainty</code>: share of log-variance by source (depth, recovery, structure).</em></td>
+<td colspan="1" align="center"><img src="./figs/fig_dualrank.png" alt="fig_dualrank" width="100%"><br><em>(d) <code>fig_dualrank</code>: S2 dual ranking as two aligned panels.</em></td>
+<td colspan="1" align="center"><img src="./figs/fig_criteria.png" alt="fig_criteria" width="100%"><br><em>(e) <code>fig_criteria</code>: rank of each focal sector under w, m, v and w with trade split.</em></td>
+<td colspan="1" align="center"><img src="./figs/fig_uncertainty.png" alt="fig_uncertainty" width="100%"><br><em>(f) <code>fig_uncertainty</code>: share of log-variance by source (depth, recovery, structure).</em></td>
 </tr>
 </table>
 
