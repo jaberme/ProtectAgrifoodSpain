@@ -1,4 +1,5 @@
 # Using the Reproduction Set `repro/`
+[Get the PDF version for the instructions if you feel more comfortable](./repro_guide.pdf)
 
 **Scripts and data of the dynamic inoperability (DIIM) analysis of Spain's agri-food system submitted to the *International Journal of Critical Infrastructure Protection*.**
 Package `envio_IJCIP`, directory `repro/`. 3 October 2026.
