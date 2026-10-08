@@ -1,4 +1,4 @@
-# Using the Reproduction Set `repro/`
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23249712.svg)](https://doi.org/10.5281/zenodo.23249712)# Using the Reproduction Set `repro/`
 [Get the PDF version for the instructions if you feel more comfortable](./repro_guide.pdf)
 
 **Scripts and data of the dynamic inoperability (DIIM) analysis of Spain's agri-food system submitted to the *International Journal of Critical Infrastructure Protection*.**
