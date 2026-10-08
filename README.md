@@ -1,4 +1,6 @@
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23249712.svg)](https://doi.org/10.5281/zenodo.23249712)# Using the Reproduction Set `repro/`
+# Using the Reproduction Set `repro/`
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23249712.svg)](https://doi.org/10.5281/zenodo.23249712)
 
 
 [Get the PDF version for the instructions if you feel more comfortable](./repro_guide.pdf)
